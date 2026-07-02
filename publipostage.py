@@ -38,29 +38,29 @@ def construire_tableau_html(groupe):
 
         lignes += f"""
         <tr style='background-color:{bg};'>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{i + 1}</td>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#1a1a2e;font-weight:bold;'>{row.nom_prenom_eleve}</td>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{row.classe_sollicitee}</td>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{row.ecole_sollicitee}</td>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;'>{row.ref_demande}</td>
-            <td style='padding:8px 10px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:{couleur_decision};text-align:center;'>{texte_decision}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{i + 1}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#1a1a2e;font-weight:bold;'>{row.nom_prenom_eleve}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{row.classe_sollicitee}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;text-align:center;'>{row.ecole_sollicitee}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;color:#333;'>{row.ref_demande}</td>
+            <td style='padding:6px 8px;border:1px solid #c8d0dc;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:{couleur_decision};text-align:center;'>{texte_decision}</td>
         </tr>"""
 
     return f"""
     <table style='border-collapse:collapse;width:100%;table-layout:fixed;border:1px solid #c8d0dc;margin:10px 0 0 0;'>
         <thead>
             <tr style="background-color:#0D2E6E;height:30px;">
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:5%;">N°</th>
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:30%;">Élève</th>
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:10%;">Classe</th>
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:12%;">École</th>
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:30%;">Réf. Demande</th>
-                <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;width:13%;">Décision</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:5%;">N°</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:30%;">Élève</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:10%;">Classe</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:12%;">École</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:30%;">Réf. Demande</th>
+                <th style="padding:6px 8px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;width:13%;">Décision</th>
             </tr>
         </thead>
         <tbody style='border-bottom:1px solid #c8d0dc;'>{lignes}</tbody>
     </table>
-    <div style='height:20px;line-height:20px;font-size:1px;'>&nbsp;</div>
+    <div style='height:18px;line-height:18px;font-size:1px;'>&nbsp;</div>
     """
 
 
@@ -147,7 +147,7 @@ def remplacer_balises_html(doc, balises):
     # ajout d'image de signature
 
     signature_html = """
-    <img src="cid:signature" width="600" height="200" style="display:block;align="center">
+    <img src="cid:signature" width="400" height="160" style="display:block;align="center">
     """
     lignes_html.append(signature_html)
     return "<html><body style='font-family:Arial,sans-serif;font-size:15px;color:#333;margin:20px;'>" + "".join(lignes_html) + "</body></html>"
@@ -171,8 +171,8 @@ def generer_pdf(groupe, output_path):
     # Logo
     logo = Image(
         r"C:\Users\user\PycharmProjects\PythonProject\logo famille et education.png",
-        width=150,
-        height=45,
+        width=100,
+        height=40,
     )
 
     titre_style = ParagraphStyle(
@@ -309,7 +309,7 @@ def generer_pdf(groupe, output_path):
     elements.append(Spacer(1, 40))
 
     # Trait horizontal
-    elements.append(HRFlowable(width="100%", thickness=0.5, color=colors.blue))
+    elements.append(HRFlowable(width="100%", thickness=0.5, color=colors.grey))
 
     # Date du jour
     date_du_jour = datetime.now().strftime("%d/%m/%Y")
