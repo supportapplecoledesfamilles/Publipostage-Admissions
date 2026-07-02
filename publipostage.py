@@ -33,7 +33,7 @@ def construire_tableau_html(groupe):
             couleur_decision = "#1a7a2e"
             texte_decision   = "Admis"
         else:
-            couleur_decision = "#b45309"
+            couleur_decision = "#b4090c"
             texte_decision   = "Réfusé"
 
         lignes += f"""
@@ -49,7 +49,7 @@ def construire_tableau_html(groupe):
     return f"""
     <table style='border-collapse:collapse;width:100%;table-layout:fixed;border:1px solid #c8d0dc;margin:10px 0 0 0;'>
         <thead>
-            <tr style="background-color:#0D2E6E;height:38px;">
+            <tr style="background-color:#0D2E6E;height:30px;">
                 <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:5%;">N°</th>
                 <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:30%;">Élève</th>
                 <th style="padding:8px 10px;text-align:center;font-size:13px;font-weight:700;color:#ffffff;font-family:Arial,sans-serif;border-right:1px solid rgba(255,255,255,0.25);width:10%;">Classe</th>
@@ -144,7 +144,7 @@ def remplacer_balises_html(doc, balises):
             lignes_html.append(
                 f"<p style='font-family:Arial,sans-serif;font-size:15px;color:#333;line-height:1.8;margin:0 0 12px 0;'>{texte}</p>"
             )
-    # ajout d'imahe de signature
+    # ajout d'image de signature
 
     signature_html = """
     <img src="cid:signature" width="600" height="200" style="display:block;align="center">
@@ -171,14 +171,14 @@ def generer_pdf(groupe, output_path):
     # Logo
     logo = Image(
         r"C:\Users\user\PycharmProjects\PythonProject\logo famille et education.png",
-        width=100,
-        height=42,
+        width=150,
+        height=45,
     )
 
     titre_style = ParagraphStyle(
         name="TitreEntete",
         fontName="Helvetica-Bold",
-        fontSize=14,
+        fontSize=13,
         leading=20,
         textColor=colors.HexColor("#1F4E79"),
         alignment=0,
@@ -264,7 +264,7 @@ def generer_pdf(groupe, output_path):
 
     style = [
         # En-tête bleu de logo + texte blanc
-        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#1A5276")),
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#1873AB")),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
         ('FONTSIZE', (0, 1), (-1, -1), 8),
@@ -309,7 +309,7 @@ def generer_pdf(groupe, output_path):
     elements.append(Spacer(1, 40))
 
     # Trait horizontal
-    elements.append(HRFlowable(width="100%", thickness=1, color=colors.black))
+    elements.append(HRFlowable(width="100%", thickness=0.5, color=colors.blue))
 
     # Date du jour
     date_du_jour = datetime.now().strftime("%d/%m/%Y")
@@ -318,7 +318,7 @@ def generer_pdf(groupe, output_path):
         fontName="Helvetica",
         fontSize=10,
         alignment=2,
-        textColor=colors.black
+        textColor=colors.orange
     )
     elements.append(Paragraph(f"Date d'envoi : {date_du_jour}", date_style))
     doc.build(elements)
